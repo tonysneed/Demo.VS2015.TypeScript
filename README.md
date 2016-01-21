@@ -14,15 +14,10 @@ Based on: http://kearon.blogspot.sk/2014/08/testing-typescript-with-jasmine-in.h
     Install-Package Microsoft.AspNet.Mvc
     ```
 
-3. Set TS module to CommonJs.
-  - This is needed to allow use of `export` with classes.
-  - Project properties, TypeScript Build, CommonJS
-  - Also set the ECMAScript version to 6
-
-4. Add `greeter.ts` file.
+3. Add `greeter.ts` file.
 
     ```typescript
-    export class Greeter {
+    class Greeter {
         constructor(public message: string) {
         }
 
@@ -32,26 +27,23 @@ Based on: http://kearon.blogspot.sk/2014/08/testing-typescript-with-jasmine-in.h
     }
     ```
 
-5. Install the **JasmineTest** NuGet package.
+4. Install the **JasmineTest** NuGet package.
 
     ```
     install-package JasmineTest
     ```
 
-6. Add jasmine typings.
+5. Add jasmine typings.
 
     ```
     Install-Package jasmine.typescript.DefinitelyTyped
     ```
 
-7. Add `greeter.spec.ts` file.
-  - When running the jasmine tests in a browser,
-    you'll get two errors: exports and require undefined.
+6. Add `greeter.spec.ts` file.
 
     ```typescript
+    /// <reference path="greeter.ts"/>
     /// <reference path="Scripts/typings/jasmine/jasmine.d.ts" />
-
-    import {Greeter} from "./greeter";
 
     describe("Greeter", () => {
 
@@ -60,10 +52,10 @@ Based on: http://kearon.blogspot.sk/2014/08/testing-typescript-with-jasmine-in.h
             it("returns Hello World", () => {
 
                 // Arrange
-                let greeter = new Greeter("World");
+                var greeter = new Greeter("World");
 
                 // Act
-                let result = greeter.greet();
+                var result = greeter.greet();
 
                 // Assert
                 expect(result).toEqual("Hello World");
@@ -71,4 +63,3 @@ Based on: http://kearon.blogspot.sk/2014/08/testing-typescript-with-jasmine-in.h
         });
     });
     ```
-
