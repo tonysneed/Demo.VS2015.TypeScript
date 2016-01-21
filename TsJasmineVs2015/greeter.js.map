@@ -1,0 +1,1 @@
+{"version":3,"file":"greeter.js","sourceRoot":"","sources":["greeter.ts"],"names":["Greeter","Greeter.constructor","Greeter.greet"],"mappings":"AAAA;IACIA,iBAAmBA,OAAeA;QAAfC,YAAOA,GAAPA,OAAOA,CAAQA;IAClCA,CAACA;IAEDD,uBAAKA,GAALA;QACIE,MAAMA,CAACA,QAAQA,GAAGA,IAAIA,CAACA,OAAOA,CAACA;IACnCA,CAACA;IACLF,cAACA;AAADA,CAACA,AAPD,IAOC"}

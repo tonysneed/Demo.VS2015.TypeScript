@@ -1,4 +1,4 @@
-﻿export class Greeter {
+﻿class Greeter {
     constructor(public message: string) {
     }
 
